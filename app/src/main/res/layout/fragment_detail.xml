@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.banktransfer.ui.main.detail.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.detail.DetailFragment">
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.customer.name}"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+            android:textColor="@color/md_theme_light_onBackground"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/email_label_text"
+            style="@style/label_customer_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/email_text"
+            android:text="@string/email"
+            app:layout_constraintBaseline_toBaselineOf="@id/email_text"
+            app:layout_constraintEnd_toStartOf="@id/email_text"
+            app:layout_constraintStart_toStartOf="@id/start_guideline" />
+
+        <TextView
+            android:id="@+id/email_text"
+            style="@style/field_customer_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.customer.email}"
+            app:layout_constraintBottom_toTopOf="@id/age_text"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/email_label_text"
+            app:layout_constraintTop_toBottomOf="@id/name_text"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="example@gmail.com" />
+
+        <TextView
+            android:id="@+id/age_label_text"
+            style="@style/label_customer_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/age_text"
+            android:text="@string/age"
+            app:layout_constraintBaseline_toBaselineOf="@id/age_text"
+            app:layout_constraintEnd_toStartOf="@id/age_text"
+            app:layout_constraintStart_toStartOf="@id/start_guideline" />
+
+        <TextView
+            android:id="@+id/age_text"
+            style="@style/field_customer_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(viewModel.customer.age)}"
+            app:layout_constraintBottom_toTopOf="@id/balance_text"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/age_label_text"
+            app:layout_constraintTop_toBottomOf="@id/email_text"
+            tools:text="21" />
+
+        <TextView
+            android:id="@+id/balance_label_text"
+            style="@style/label_customer_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/balance_text"
+            android:text="@string/balance"
+            app:layout_constraintBaseline_toBaselineOf="@id/balance_text"
+            app:layout_constraintEnd_toStartOf="@id/balance_text"
+            app:layout_constraintStart_toStartOf="@id/start_guideline" />
+
+        <TextView
+            android:id="@+id/balance_text"
+            style="@style/field_customer_detail"
+            currencyText="@{viewModel.customer.currentBalance}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/transfer_button"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/balance_label_text"
+            app:layout_constraintTop_toBottomOf="@id/age_text"
+            tools:text="$250" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/transfer_amount_inputLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/transfer_amount"
+            app:endIconMode="clear_text"
+            app:layout_constraintBottom_toBottomOf="@id/transfer_button"
+            app:layout_constraintEnd_toStartOf="@id/transfer_button"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toTopOf="@id/transfer_button">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/transfer_amount_inputText"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/transfer_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/transfer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/transfer_amount_inputLayout"
+            app:layout_constraintTop_toBottomOf="@id/balance_text" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/offset_horizontal_detail" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/offset_horizontal_detail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

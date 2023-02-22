@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="field_customer_detail">
+        <item name="android:background">@drawable/round_secondary_shape</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="android:textColor">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="layout_constraintHorizontal_weight">5</item>
+        <item name="android:layout_marginBottom">@dimen/margin_fields_vertical</item>
+    </style>
+
+    <style name="label_customer_detail">
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelMedium</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+        <item name="android:textColor">@color/md_theme_light_onBackground</item>
+    </style>
+
+</resources>

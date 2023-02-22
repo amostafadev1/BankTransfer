@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Bank Transfer</string>
+    <string name="email">Email</string>
+    <string name="age">Age</string>
+    <string name="balance">Balance</string>
+    <string name="transfer">Transfer</string>
+    <string name="transfer_dialog_message">Which customer are you sending money to?</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
+    <string name="transfer_credit">Transfer Credit</string>
+    <string name="transfer_amount">Transfer amount</string>
+    <string name="invalid_amount">Invalid Amount</string>
+    <string name="successful_transfer_message">Transferred to %s</string>
+
+</resources>
