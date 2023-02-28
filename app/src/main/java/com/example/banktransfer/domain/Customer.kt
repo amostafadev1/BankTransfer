@@ -8,6 +8,6 @@ data class Customer(
     val id: Long,
     val name: String,
     val email: String,
-    val age: Int,
-    val currentBalance: Double
+    val currentBalance: Double,
+    val age: Int
 ) : Parcelable

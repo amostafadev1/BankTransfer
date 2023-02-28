@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.banktransfer.ui.main.detail.DetailFragment"
-        android:label="Details"
-        tools:layout="@layout/fragment_detail" >
+        android:label="Customer Info"
+        tools:layout="@layout/fragment_detail">
         <argument
             android:name="selectedCustomerId"
-            app:argType="long"
-            android:defaultValue="-1L" />
+            android:defaultValue="-1L"
+            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
